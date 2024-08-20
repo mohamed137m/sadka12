@@ -227,7 +227,7 @@
                 <li><a href="#intro">الرئيسية</a></li>
                 <li><a href="#content">المحتوى الديني</a></li>
                 <li><a href="#daily-prayer">أذكار يومية</a></li>
-                <li><a href="#dhikr">التسبيحات</a></li>
+                <li><a href="#dhikr-subhanallah">التسبيحات</a></li>
                 <li><a href="#prayer-counter">عداد الصلاة على محمد</a></li>
             </ul>
         </nav>
@@ -265,58 +265,44 @@
 
         <section id="daily-prayer" class="section">
             <h2>أذكار يومية</h2>
-            <p>اضغط على الزر أدناه للحصول على ذكر يومي.</p>
-            <button class="btn" onclick="showDailyQuote()">احصل على ذكر</button>
-            <p id="daily-quote" class="daily-quote"></p>
+            <p class="daily-quote">اللهم اجعلني لك كما تحب</p>
         </section>
 
-        <section id="dhikr" class="section">
-          <h2>   سبحان الله " 33 "</h2>
-          <div class="counter" id="dhikr-counter">0</div>
-          <button class="btn" onclick="incrementCounter()">سبحان الله</button>
-          <button class="btn reset-btn" onclick="resetCounter('dhikr-counter')">إعادة التعيين</button>
-      </section>
+        <!-- تسبيحات -->
+        <section id="dhikr-subhanallah" class="section">
+            <h2>سبحان الله "33"</h2>
+            <div class="counter" id="subhan-counter">0</div>
+            <button class="btn" onclick="incrementCounter('subhan-counter')">سبحان الله</button>
+            <button class="btn reset-btn" onclick="resetCounter('subhan-counter')">إعادة التعيين</button>
+        </section>
 
-        <section id="dhikr" class="section">
-          <h2>  الحمدلله" 33 "</h2>
-          <div class="counter" id="dhikr-counter">0</div>
-          <button class="btn" onclick="incrementCounter()">سبحان الله</button>
-          <button class="btn reset-btn" onclick="resetCounter('dhikr-counter')">إعادة التعيين</button>
-      </section>
+        <section id="dhikr-hamdlillah" class="section">
+            <h2>الحمد لله "33"</h2>
+            <div class="counter" id="hamd-counter">0</div>
+            <button class="btn" onclick="incrementCounter('hamd-counter')">الحمد لله</button>
+            <button class="btn reset-btn" onclick="resetCounter('hamd-counter')">إعادة التعيين</button>
+        </section>
 
-        <section id="dhikr" class="section">
-          <h2>الله اكبر " 33 "</h2>
-          <div class="counter" id="dhikr-counter">0</div>
-          <button class="btn" onclick="incrementCounter()">سبحان الله</button>
-          <button class="btn reset-btn" onclick="resetCounter('dhikr-counter')">إعادة التعيين</button>
-      </section>
-        
-      <section id="prayer-counter" class="section">
-          <h2>عداد الصلاة على محمد</h2>
-          <div class="counter" id="prayer-counter-value">0</div>
-          <button class="btn" onclick="incrementPrayerCounter()">اللهم صل على محمد</button>
-          <button class="btn reset-btn" onclick="resetCounter('prayer-counter-value')">إعادة التعيين</button>
-      </section>
-      
-      <script>
-          function incrementCounter() {
-              let counter = document.getElementById('dhikr-counter');
-              counter.textContent = parseInt(counter.textContent) + 1;
-          }
-      
-          function incrementPrayerCounter() {
-              let counter = document.getElementById('prayer-counter-value');
-              counter.textContent = parseInt(counter.textContent) + 1;
-          }
-      
-          function resetCounter(counterId) {
-              document.getElementById(counterId).textContent = 0;
-          }
-      </script>
-      
-        <section id="prayers-section" class="prayers-container">
+        <section id="dhikr-allahuakbar" class="section">
+            <h2>الله أكبر "33"</h2>
+            <div class="counter" id="akbar-counter">0</div>
+            <button class="btn" onclick="incrementCounter('akbar-counter')">الله أكبر</button>
+            <button class="btn reset-btn" onclick="resetCounter('akbar-counter')">إعادة التعيين</button>
+        </section>
+
+        <!-- عداد الصلاة على محمد -->
+        <section id="prayer-counter" class="section">
+            <h2>عداد الصلاة على محمد</h2>
+            <div class="counter" id="prayer-count">0</div>
+            <button class="btn" onclick="incrementCounter('prayer-count')">صلى على محمد</button>
+            <button class="btn reset-btn" onclick="resetCounter('prayer-count')">إعادة التعيين</button>
+        </section>
+
+        <!-- قسم الأدعية -->
+        <section id="prayers-section" class="section prayers-container">
             <h3>أدعية للمتوفي</h3>
             <ul>
+              <ul>
                 <li>اللهم اغفر له وارحمه وعافه واعف عنه.</li>
                 <li>اللهم نقه من الخطايا كما ينقى الثوب الأبيض من الدنس.</li>
                 <li>اللهم اغسله بالماء والثلج والبرد.</li>
@@ -338,49 +324,41 @@
                 <li>اللهم أنزله منازل الصديقين والشهداء والصالحين وحسن أولئك رفيقاً.</li>
                 <li>اللهم اجعل له من فوقه ومن تحته ومن أمامه ومن خلفه وعن يمينه وعن شماله نوراً من نورك يا نور السماوات والأرض.</li>
             </ul>
-
+            </ul>
         </section>
-        <section id="prayers-section" class="prayers-container">
-          <h3>الصلاة الابراهمية </h3>
-          <ul>
-              <p>
-                اللهم صلي علي محمد وعلي ال محمد كما صليت علي ابراهيم وعلي ال ابراهيم انك حميد مجيد وبارك علي محمد وعلي ال محمد كما باركت علي ابراهيم وعلي ال ابراهيم انك حميد مجيد
-              </p>
-          </ul>
-      </section>
     </main>
-<br><br>            <br>
+<br>
+<br>
+<br>
+<br>
 <br>
     <footer>
-        <p>© 2024 صدقة جارية - عبدالرحمن بهجت</p>
+        <p>&copy; 2024 - صدقة جارية - عبدالرحمن بهجت</p>
     </footer>
 
     <script>
+        // Toggle dark mode
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
         }
 
-        function showDailyQuote() {
-            const quotes = [
-                "سبحان الله وبحمده، سبحان الله العظيم.",
-                "لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير.",
-                "اللهم اجعلني من التوابين واجعلني من المتطهرين.",
-                "اللهم إنك عفو تحب العفو فاعف عنا."
-            ];
-            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-            document.getElementById('daily-quote').textContent = randomQuote;
-            document.getElementById('daily-quote').style.display = 'block';
-        }
-
-        function incrementCounter() {
-            let counter = document.getElementById('dhikr-counter');
+        // Increment counter
+        function incrementCounter(counterId) {
+            let counter = document.getElementById(counterId);
             counter.textContent = parseInt(counter.textContent) + 1;
         }
 
-        function incrementPrayerCounter() {
-            let counter = document.getElementById('prayer-counter-value');
-            counter.textContent = parseInt(counter.textContent) + 1;
+        // Reset counter
+        function resetCounter(counterId) {
+            document.getElementById(counterId).textContent = 0;
         }
+
+        // Display daily prayer after a few seconds
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.daily-quote').style.display = 'block';
+            }, 3000);
+        });
     </script>
 </body>
 </html>
